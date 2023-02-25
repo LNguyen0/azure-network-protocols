@@ -107,10 +107,30 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 <p>Filter for "ssh" on Wireshark</p>
 <p>Type "ssh [username of linux virtual machine]@[private ip address]" onto Powershell</p>
 <p>Enter the password you thought of during the time you made the linux machine. You can't see the actual characters when you type, but the characters are there.</p>
-<p>Observe the ssh traffic</p>
+<p>Watch the ssh traffic</p>
 <p>Type "exit" and press "enter" to exit the SSH connection</p>
 <img src="https://i.imgur.com/dBBH5BE.png" height="80%" width="80%" alt="ssh"/>
 <p> </p>
 <br />
 
-<p>Filter for "DHCP" on Wireshark</p>
+<p>Filter for "DHCP"</p>
+<p>In Powershell, type "ipconfig /renew" to watch the DHCP traffic.</p>
+<img src="https://i.imgur.com/71stoFI.png" height="80%" width="80%" alt="dhcp"/>
+<p> </p>
+<br />
+
+<p>Filter for "DNS"</p>
+<p>Type "nslookup www.disney.com" on Powershell</p>
+<p>Watch the DNS traffic</p>
+<img src="https://i.imgur.com/oYerTRM.png" height="80%" width="80%" alt="dhcp"/>
+<p> </p>
+<br />
+
+<p>Filter for RDP using "tcp.port == 3389"</p>
+<p>Watch the non-stop traffic on Wireshark</p>
+<img src="https://i.imgur.com/ZsRJ2xj.png" height="80%" width="80%" alt="dhcp"/>
+<p> </p>
+<br />
+
+<p>Close your remote desktop connection</p>
+<p>On the Azure site, find your resource groups/virtual machines and delete them.</p>
