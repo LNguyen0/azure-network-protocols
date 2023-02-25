@@ -49,7 +49,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 <p> </p>
 <br />
 
-<p>Open up "Microsoft Remote Desktop". </p>
+<p>Open up "Microsoft Remote Desktop" </p>
 <p>On Windows, you can search it on a search bar that's located on the bottom-left of your computer screen. For other operating systems like Mac, you can find a "Microsoft Remote Desktop" app on the app store. </p>
 <p> </p>
 <br />
@@ -69,7 +69,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 <p> </p>
 <br />
 
-<p>Install and open the program.</p>
+<p>Install and open the program</p>
 <p>Click on "Ethernet" and then the "blue shark fin" icon. You should then see some traffic popping up in the software.</p>
 <img src="https://i.imgur.com/BcdpS8Y.png" height="80%" width="80%" alt="wireshark"/>
 <p> </p>
@@ -83,14 +83,34 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 <p> </p>
 <br />
 
-<p>In Powershell, this time, type "ping www.google.com". </p>
+<p>In Powershell, this time, type "ping www.google.com" </p>
 <p>You'll notice traffic being sent between your ip address and Google's ip address.</p>
-<img src="https://i.imgur.com/YdNuqns.png" height="80%" width="80%" alt="icmp traffic"/>
+<img src="https://i.imgur.com/YdNuqns.png" height="80%" width="80%" alt="ping traffic"/>
 <p> </p>
 <br />
 
-<p></p>
+<p>Type "ping [linux virtual machine's private ip address] -t", which creates non-stop traffic.</p>
+<p>Go back to the Azure site and search for "Network security groups"</p>
+<p>Click on [linux virtual machine-nsg] -> Inbound security rules</p>
+<p>Add a new rule</p>
+<p>Set "Protocol": ICMP, "Action": Deny, "Priority": 200, and "Name": Deny_Any_ICMP_Protocol</p>
+<p>This new rule should time out the requests.</p>
+<img src="https://i.imgur.com/xKsbROx.png" height="80%" width="80%" alt="deny icmp"/>
+<p> </p>
+<br />
 
+<p>Edit the newly made rule by setting "Action" to "Allow". This will resume the ping activity.</p>
+<img src="https://i.imgur.com/dBBH5BE.png" height="80%" width="80%" alt="allow icmp"/>
+<p> </p>
+<br />
 
+<p>Filter for "ssh" on Wireshark</p>
+<p>Type "ssh [username of linux virtual machine]@[private ip address]" onto Powershell</p>
+<p>Enter the password you thought of during the time you made the linux machine. You can't see the actual characters when you type, but the characters are there.</p>
+<p>Observe the ssh traffic</p>
+<p>Type "exit" and press "enter" to exit the SSH connection</p>
+<img src="https://i.imgur.com/dBBH5BE.png" height="80%" width="80%" alt="ssh"/>
+<p> </p>
+<br />
 
-
+<p>Filter for "DHCP" on Wireshark</p>
