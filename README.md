@@ -54,13 +54,31 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 <p> </p>
 <br />
 
-<p>When you have the application opened, input the "Public IP address" of your windows virtual machine. You can search for your virtual machines on the Azure search bar and click on the name of your virtual machine.</p>
+<p>When you have the application opened, paste the "Public IP address" of your windows virtual machine. You can search for your virtual machines on the Azure search bar and see the ip address once you click on the name of your virtual machine.</p>
 <p>You should be able to find the public ip address towards the right of the screen.</p>
   
 <p>
 <img src="https://i.imgur.com/nJZFm5c.png" height="80%" width="80%" alt="VM public ip address"/>
 </p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
+<p> </p>
+<br />
+
+<p>Once you have logged into the remote desktop with your username and password, open up "Microsoft Edge".</p>
+<p>From there, search up "wireshark download" and download it from the official website.</p>
+<img src="https://i.imgur.com/4jUormX.png" height="80%" width="80%" alt="wireshark download"/>
+<p> </p>
+<br />
+
+<p>Install and open the program.</p>
+<p>Click on "Ethernet" and then the "blue shark fin" icon. You should then see some traffic popping up in the software.</p>
+<img src="https://i.imgur.com/BcdpS8Y.png" height="80%" width="80%" alt="wireshark"/>
+<p> </p>
+<br />
+
+<p>Type "ICMP" and hit "Enter" on the filter bar. You'll notice that there's no traffic going on.</p>
+<p>Open up the command line. You can do this by typing "powershekk" on the search bar of the window's toolbar.</p>
+<p>Switch over to the Azure website and copy the private IP address of your Linux virtual machine. On powershell, type "ping [paste IP address]".</p>
+<p>Watch the ICMP traffic on Wireshark.</p>
+<img src="https://i.imgur.com/yyxVpoz.png" height="80%" width="80%" alt="icmp traffic"/>
+<p> </p>
 <br />
