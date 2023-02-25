@@ -82,3 +82,15 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 <img src="https://i.imgur.com/yyxVpoz.png" height="80%" width="80%" alt="icmp traffic"/>
 <p> </p>
 <br />
+
+<p>In Powershell, this time, type "ping www.google.com". </p>
+<p>You'll notice traffic being sent between your ip address and Google's ip address.</p>
+<img src="https://i.imgur.com/YdNuqns.png" height="80%" width="80%" alt="icmp traffic"/>
+<p> </p>
+<br />
+
+<p></p>
+
+
+
+
