@@ -54,9 +54,9 @@ Create Windows Virtual Machine
 <hr>
 
 <p>
-3
+Create Linux Virtual Machine
   
-- Create another virtual machine, but this time set <b>image*</b> to "Ubuntu Server 20.04 LTS".
+- Repeat most of the previous steps, but this time set <b>image*</b> to "Ubuntu Server 20.04 LTS".
 - Also, for <b>Authentication type</b>, click on "Password" rather than "SSH public key".
 - Setup your username and password. Then, click "Review + create". 
 
@@ -65,7 +65,7 @@ Create Windows Virtual Machine
 <br />
 
 <p>
-4
+Remote Desktop
   
 - Open up "Microsoft Remote Desktop"
 - On Windows, you can search it on a search bar that's located on the bottom-left of your computer screen. For other operating systems like Mac, you can find a "Microsoft Remote Desktop" app on the app store. 
@@ -75,7 +75,7 @@ Create Windows Virtual Machine
 <br />
 
 <p>
-5
+Logging into RD
 
 - When you have the application opened, paste the "Public IP address" of your windows virtual machine. You can search for your virtual machines on the Azure search bar and see the ip address once you click on the name of your virtual machine.
 - You should be able to find the public ip address towards the right of the screen.
@@ -89,7 +89,7 @@ Create Windows Virtual Machine
 <hr>
 
 <p>
-6
+Download Wireshark
   
 - Once you have logged into the remote desktop with your username and password, open up "Microsoft Edge".
 - From there, search up "wireshark download" and download it from the official website.
@@ -100,7 +100,7 @@ Create Windows Virtual Machine
 <hr>
 
 <p>
-7
+Seeing Traffic
   
 - Install and open the program</p>
 - Click on "Ethernet" and then the "blue shark fin" icon. You should then see some traffic popping up in the software.
@@ -111,7 +111,7 @@ Create Windows Virtual Machine
 <hr>
 
 <p>
-8
+ICMP Pinging
   
 - Type "ICMP" and hit "Enter" on the filter bar. You'll notice that there's no traffic going on.
 - Open up the command line. You can do this by typing "powershekk" on the search bar of the window's toolbar.
@@ -124,7 +124,7 @@ Create Windows Virtual Machine
 <hr>
 
 <p>
-9
+Google's Traffic
   
 - In Powershell, this time, type "ping www.google.com"
 - You'll notice traffic being sent between your ip address and Google's ip address.
@@ -135,7 +135,7 @@ Create Windows Virtual Machine
 <hr>
 
 <p>
-10
+Add A Deny Rule
 
 - Type "ping [linux virtual machine's private ip address] -t", which creates non-stop traffic.
 - Go back to the Azure site and search for "Network security groups"
@@ -150,7 +150,7 @@ Create Windows Virtual Machine
 <hr>
 
 <p>
-12
+Edit Deny Rule
   
 - Edit the newly made rule by setting "Action" to "Allow". This will resume the ping activity.
 
@@ -160,7 +160,7 @@ Create Windows Virtual Machine
 <hr>
 
 <p>
-13
+SSH Traffic
   
 - Filter for "ssh" on Wireshark
 - Type "ssh [username of linux virtual machine]@[private ip address]" onto Powershell
@@ -174,7 +174,7 @@ Create Windows Virtual Machine
 <hr>
 
 <p>
-14
+DHCP Traffic
   
 - Filter for "DHCP"</p>
 - In Powershell, type "ipconfig /renew" to watch the DHCP traffic.
@@ -187,7 +187,7 @@ Create Windows Virtual Machine
 <hr>
 
 <p>
-15 
+DNS Traffic 
   
 - Filter for "DNS", or in this case, "udp.port == 53"
 - Type "nslookup www.disney.com" on Powershell
@@ -199,7 +199,7 @@ Create Windows Virtual Machine
 <hr>
 
 <p>
-16
+RDP Traffic
   
 - Filter for RDP using "tcp.port == 3389"
 - Watch the non-stop traffic on Wireshark
